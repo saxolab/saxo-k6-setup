@@ -1,14 +1,10 @@
 import http from 'k6/http';
 import { check } from 'k6';
-import cheerio from 'cheerio';
 
 export default function () {
-  const res = http.get('https://loadimpact.com/');
-  const $ = cheerio.load(res.body);
-
-  const title = $('head title').text();
-  check(title, {
+  console.log("Hello i am running")
+  const title= 'Load Impact is now k6';
+  check('Load Impact is now k6', {
     'has correct title': () => title == 'Load Impact is now k6',
   });
-  console.log(title);
 }

@@ -1,3 +1,15 @@
+Run : 
+
+```
+npm install .
+npm run-script webpack
+docker run -v $(pwd)/build:/build loadimpact/k6 run /build/app.bundle.js 
+```
+
+
+
+
+
 For additional details, see [this article in the k6 docs](https://k6.io/docs/using-k6/modules)
 
 ## What is this?
